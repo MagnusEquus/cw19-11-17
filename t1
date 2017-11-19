@@ -1,0 +1,27 @@
+# cw19-11-17
+//Напишите программу, которая удаляет из массива все простые числа встречающиеся больше одного раза.
+#include <iostream> 
+#include <cstdlib> 
+#include <string> 
+using namespace std; 
+
+
+bool checker(int number)
+{
+	if(number%2==0 && number!=2){return true;}
+     for (int i = number-1; i > 1; i--) 
+	{
+		if(number%i==0) return true;
+	}
+	return false;
+}
+void main(){
+	int n;
+	cin >> n;
+	for(int i=4;i<=n;i++){
+		if(checker(i)==true){
+			cout << i << " ";
+		}
+	}
+	system("pause");
+}
