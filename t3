@@ -1,0 +1,27 @@
+# cw19-11-17
+//Напишите программу заполняющую двумерный массив размера N×N диагоналями, как показано в примере.
+#include <iostream> 
+#include <cstdlib> 
+#include <string> 
+using namespace std; 
+
+void main(){
+	int a=0;
+	cin >> a;
+	int** mass= new int *[a];
+	for (int i = 0; i < a; i++)
+        mass[i] = new int [a];
+	for(int i=1;i<=a;i++)
+	{
+		for(int j=a-i-1;j<a;j++)
+		{
+			mass[a-j][j]=i;
+			mass[j][a-j]=i;
+		}
+	}
+	for(int i=0;i<4;i++){
+		for(int j=0;j<a;j++){cout << mass[j][i] << " ";}
+		cout << "\n";
+	}
+	system("pause");
+}
