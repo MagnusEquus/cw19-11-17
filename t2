@@ -1,0 +1,34 @@
+# cw19-11-17
+//Напишите программу выписывающую из массива все числа имеющие ровно 3 делителя. Программа должна быть эффективной по времени. Гарантируется, что в массиве таких чисел не менее трети.
+#include <iostream> 
+#include <cstdlib> 
+#include <string> 
+using namespace std; 
+
+bool checker(int number)
+{
+	int a=0;
+     for (int i = number-1; i > 1; i--) 
+	{
+		if(number%i==0) {
+			a++;
+			if(a>=3){
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+void main(){
+	int a=0;
+	cin >> a;
+	int *mass= new int[a];
+	for(int i=0; i<a;i++){
+		cin >> mass[i];
+	}
+	for(int j=0;j<a;j++){
+		if(checker(mass[j]))cout << mass[j];
+	}
+	system("pause");
+}
